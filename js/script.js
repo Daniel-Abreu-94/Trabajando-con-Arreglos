@@ -30,13 +30,16 @@ function showList(array) {
   container.innerHTML = "";
   // Más info de forEach => https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
   array.forEach((element) => {
+    if (typeof element === 'string'){
     const li = document.createElement("li");
     li.appendChild(document.createTextNode(element));
     container.appendChild(li);
+    }
   });
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
   // Escribe tu solución aquí
+  showList(strangeArray);
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
 });
