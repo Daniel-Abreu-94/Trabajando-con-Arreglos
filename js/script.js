@@ -28,8 +28,10 @@ const strangeArray = [
 function showList(array) {
   const container = document.getElementById("list");
   container.innerHTML = "";
+  const stringElements = array.filter(element => typeof element === 'string');
+  const sortedStringElements = stringElements.sort();
   // Más info de forEach => https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-  array.forEach((element) => {
+  sortedStringElements.forEach((element) => {
     if (typeof element === 'string'){
     const li = document.createElement("li");
     li.appendChild(document.createTextNode(element));
